@@ -98,7 +98,7 @@
 
     </div>
 
-    <div class="d-flex columna-flex-direction" id="contraseña">
+    <div class="d-flex columna-flex-direction" id='update-password'>
 
         <section class="w-50 columna-flex-direction-formulario">
             <section class="text-center section">
@@ -109,7 +109,7 @@
                 <div class="col-lg-6 m-0">
                     <div class="border-contenido row p-4">
                         <div>
-                            <form method="post" action="{{ route('password.update') }}">
+                            <form method="post" action="{{ route('password.update') }}" >
                                 @csrf
                                 @method('put')
                               
