@@ -18,7 +18,7 @@ class Genretable extends Component
     #[On('search')]
     public function render()
     {
-        if($this->search !=''){
+        if ($this->search != '') {
             $this->resetPage();
         }
         $genres = Genre::where('name', 'like', '%' . $this->search . '%')->simplePaginate(6);
