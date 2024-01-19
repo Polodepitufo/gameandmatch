@@ -25,10 +25,20 @@
         </section>
     @endif
 
+    @if (session('status') === 'profile-delete')
+        <section class="d-flex justify-content-end">
+            <div class="alert alert-light alert-dismissible fade show mensajeCorrecto txt-dark-color px-2" role="alert">
+                <span class="px-4">Se ha producido un error eliminado tu cuenta.</span>
+                <button type="button" class="boton-cerrar" data-dismiss="alert" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+        </section>
+    @endif
 
     <!--Sección generales-->
 
-    <div class="d-flex columna-flex-direction-reverse">
+    <div class="d-flex columna-flex-direction-reverse" id="perfil">
         <section class="w-50 bg-img-gaming-6 bg-img-gaming altura-minima-50">
         </section>
         <section class="w-50 columna-flex-direction-formulario">
@@ -88,7 +98,7 @@
 
     </div>
 
-    <div class="d-flex columna-flex-direction">
+    <div class="d-flex columna-flex-direction" id="contraseña">
 
         <section class="w-50 columna-flex-direction-formulario">
             <section class="text-center section">
@@ -99,20 +109,20 @@
                 <div class="col-lg-6 m-0">
                     <div class="border-contenido row p-4">
                         <div>
-                            <form method="post" action="{{ route('password.update') }}"id="a">
+                            <form method="post" action="{{ route('password.update') }}">
                                 @csrf
                                 @method('put')
                               
                                 <div class="sectionHalf">
                                     <x-input-label for="update_password_current_password" :value="__('Contraseña actual')"
                                         class="w-100 mb-2" />
-                                    <x-text-input id="update_password_password" name="password" type="password"
+                                    <x-text-input id="update_password_current_password" name="current_password" type="password"
                                         class="w-100" autocomplete="new-password" />
                                     <x-input-error :messages="$errors->get('current_password')" class="mt-2 w-100" />
                                 </div>
                                 <div class="sectionHalf">
-                                    <x-input-label for="update_password_password" :value="__('Nueva contraseña')" class="w-100 mb-2" />
-                                    <x-text-input id="update_password_password" name="password" type="password"
+                                    <x-input-label for="password" :value="__('Nueva contraseña')" class="w-100 mb-2" />
+                                    <x-text-input id="password" name="password" type="password"
                                         class="w-100" autocomplete="new-password" />
                                     <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2 w-100" />
                                 </div>
@@ -140,7 +150,7 @@
         </section>
     </div>
 
-    <div class="d-flex columna-flex-direction-reverse">
+    <div class="d-flex columna-flex-direction-reverse" id="cuenta">
 
         <section class="w-50 bg-img-gaming-4 bg-img-gaming altura-minima-50">
         </section>

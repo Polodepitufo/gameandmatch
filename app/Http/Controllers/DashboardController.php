@@ -15,6 +15,7 @@ class DashboardController extends Controller
      */
     public function dashboard()
     {
+        session()->forget('status');
         $users = User::all()->count();
         $genres = Genre::all()->count();
         $games = Game::all()->count();

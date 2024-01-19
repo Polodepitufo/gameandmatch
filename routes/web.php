@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\MatchController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use Tests\Feature\Auth\PasswordUpdateTest;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,8 +59,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/match', [MatchController::class, 'list'])->name('match.list');
 
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('password', [PasswordController::class, 'update'])->name('password.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout');
 });
