@@ -567,7 +567,9 @@ a:hover {
     border-bottom: 3px solid #a18aff;
     color: #a18aff;
 }
-
+#id-header{
+    z-index: 100000;
+}
 /*
 |--------------------------------------------------------------------------
 | Tablas
