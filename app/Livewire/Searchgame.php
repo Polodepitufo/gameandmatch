@@ -15,6 +15,7 @@ class Searchgame extends Component
     #[On('search')]
     public function render()
     {
+        $search=$this->search;
         $games = Game::whereNotIn('id', function ($query) {
             $query->select('id_game')
                 ->from('user_game')
@@ -23,6 +24,6 @@ class Searchgame extends Component
         })->with(['genres'])->where('name', 'like', '%' . $this->search . '%')->take(1)->get();
 
         $this->dispatch('search');
-        return view('livewire.searchgame', compact('games'));
+        return view('livewire.searchgame', compact('games', 'search'));
     }
 }

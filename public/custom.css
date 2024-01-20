@@ -13,7 +13,7 @@ html,
 body {
     font-family: system-ui !important;
     background-color: #111;
-    color: #f0f0f0;
+    color: #f0f0f0;    
     font-size: 14px;
 }
 
@@ -50,7 +50,10 @@ p {
 small {
     margin: 1rem;
 }
+footer{
+    z-index: 1;position: relative;
 
+}
 /*
 |--------------------------------------------------------------------------
 | Bloques
@@ -59,7 +62,7 @@ small {
 
 .contenido-al-80 {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto;position: relative;z-index: 1000000000000000;
 }
 
 .border-contenido {
@@ -421,6 +424,7 @@ textarea {
 .irArriba {
     bottom: 30px;
     margin: 20px;
+    z-index: 10000;
     position: fixed;
 
 }
@@ -660,3 +664,4 @@ table a:hover {
         height: 50vh;
     }
 }
+

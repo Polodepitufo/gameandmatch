@@ -19,7 +19,7 @@
 
 <body>
     <!--Header y menú-->
-    <div id='' class="d-flex flex-row-reverse align-items-center">
+    <div id='id-top-bar' class="d-flex flex-row-reverse align-items-center">
 
 
         <small><a href="{{ route('logout') }}" class="mr-3">
@@ -115,16 +115,22 @@
 
     <!--Botón ir arriba-->
     <section class="d-flex justify-content-end">
-        <button class="neonButton irArriba" id="irArriba"  >
+        <button class="neonButton irArriba" id="irArriba">
             <img class="mx-auto d-block" width="30px"src="{{ asset('img/flecha.png') }}">
         </button>
     </section>
 
     <!--Footer-->
     <footer class=" text-center bg-light-color py-5">
-        <img class="mx-auto d-block" width="50px"src="{{ asset('/img/redes-sociales.png') }}">
-        <p class="txt-dark-color">Iconos de <a class="txt-dark-color"
-                target="_blank"href="https://www.flaticon.es/autores/freepik">Freepik - Flaticon </a></p>
+
+        <small class="txt-dark-color">Todos los datos recogidos por la aplicación serán tratados exclusivamente para
+            ejecución del proyecto <i>Game&Match</i>, estos no se cederán a terceros ni serán visibles por otros
+            usuarios (a excepción del nick). </small><br>
+        <small class="txt-dark-color">Las contraseñas se almacenan encriptadas con <a
+                href="https://laravel.com/docs/10.x/hashing#introduction" target="_blank" class="txt-dark-color">Bcrypt
+                y Argon2</a> , no obstante genera una contraseña <b>exclusiva</b> para esta
+            aplicación</small><br><small class="txt-dark-color">Iconos de <a class="txt-dark-color"
+                target="_blank"href="https://www.flaticon.es/autores/freepik">Freepik - Flaticon </a></small>
 
     </footer>
 
@@ -141,9 +147,7 @@
     <script src="https://kit.fontawesome.com/1c8e501d4b.js" crossorigin="anonymous"></script>
     <script src="{{ asset('script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <!-- Para facilitar la usabilidad de los botones se incluyen tooltips descargados del paquete andcarpi/laravel-popper-->
- @include('popper::assets')
-
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     @livewireScripts
 
 </body>

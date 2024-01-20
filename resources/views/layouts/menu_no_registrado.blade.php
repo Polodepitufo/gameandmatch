@@ -33,12 +33,12 @@
 
         <nav class="collapse  navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                    <a href="{{ route('register') }}">
-                        <li class="p-4 mb-0">CREAR CUENTA</li>
-                    </a>
-                    <a href="{{ route('login') }}">
-                        <li class="p-4 mb-0">ACCEDER</li>
-                    </a>
+                <a href="{{ route('register') }}">
+                    <li class="p-4 mb-0">CREAR CUENTA</li>
+                </a>
+                <a href="{{ route('login') }}">
+                    <li class="p-4 mb-0">ACCEDER</li>
+                </a>
             </ul>
         </nav>
     </header>
@@ -47,18 +47,24 @@
     <section id='id-contenido'>
         @yield('content')
     </section>
-        <!--Botón ir arriba-->
+    <!--Botón ir arriba-->
     <section class="d-flex justify-content-end">
         <button class="neonButton irArriba" id="irArriba">
             <img class="mx-auto d-block" width="30px"src="{{ asset('img/flecha.png') }}">
         </button>
     </section>
+
     <!--Footer-->
     <footer class=" text-center bg-light-color py-5">
-        <img class="mx-auto d-block" width="50px"src="{{ asset('/img/redes-sociales.png') }}">
-        <p class="txt-dark-color">Iconos de <a class="txt-dark-color"
-                target="_blank"href="https://www.flaticon.es/autores/freepik">Freepik - Flaticon </a></p>
-                
+
+        <small class="txt-dark-color">Todos los datos recogidos por la aplicación serán tratados exclusivamente para
+            ejecución del proyecto <i>Game&Match</i>, estos no se cederán a terceros ni serán visibles por otros
+            usuarios (a excepción del nick). </small><br>
+        <small class="txt-dark-color">Las contraseñas se almacenan encriptadas con <a href="https://laravel.com/docs/10.x/hashing#introduction"
+                target="_blank" class="txt-dark-color">Bcrypt y Argon2</a> , no obstante genera una contraseña <b>exclusiva</b> para esta
+            aplicación</small><br><small class="txt-dark-color">Iconos de <a class="txt-dark-color"
+                target="_blank"href="https://www.flaticon.es/autores/freepik">Freepik - Flaticon </a></small>
+
     </footer>
     <!--Enlaces JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
