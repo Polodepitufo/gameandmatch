@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Game;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -13,6 +14,7 @@ class Searchgame extends Component
 
 
     #[On('search')]
+    #[On('matched')]
     public function render()
     {
         $search=$this->search;
@@ -25,5 +27,18 @@ class Searchgame extends Component
 
         $this->dispatch('search');
         return view('livewire.searchgame', compact('games', 'search'));
+    }
+
+    public function match($id)
+    {
+
+        DB::table("user_game")->insert([
+            "id_game" => $id,
+            "id_user" => Auth::user()->id ,
+            "match" => 'SI',
+            "state" => 'MATCHED',
+        ]);
+        $this->dispatch('matched');
+        session()->put('status', 'Has hecho match.');
     }
 }
