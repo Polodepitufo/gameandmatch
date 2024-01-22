@@ -45,7 +45,6 @@
                     </div>
                 </section>
 
-            </section>
         @endforeach
     @endif
 </div>
