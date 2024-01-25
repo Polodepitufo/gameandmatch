@@ -52,6 +52,7 @@ small {
 }
 footer{
     z-index: 1;position: relative;
+    padding: 10px 20px;
 
 }
 /*
@@ -125,8 +126,11 @@ footer{
 .button-pill-line {
     line-height: 2.3 !important;
     white-space:nowrap;
+    font-size: 12px;
 }
-
+small{
+    font-size: 12px !important;
+}
 /*
 |--------------------------------------------------------------------------
 | Background
@@ -188,7 +192,9 @@ footer{
 .bg-img-gaming-11 {
     background: url(img/gaming-11.PNG);
 }
-
+.bg-img-gaming-12 {
+    background: url(img/neon-broken-heart.png);
+}
 .bg-img-gaming {
     background-repeat: no-repeat;
     background-size: cover;

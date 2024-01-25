@@ -1,22 +1,16 @@
 <div>
-    @if (session('status'))
-        <section class="d-flex justify-content-end">
-            <div class="alert alert-light alert-dismissible fade show mensajeCorrecto txt-dark-color px-2" role="alert">
-                <span class="px-4">{{ session('status') }}</span>
-                <input type="button" class="boton-cerrar" data-dismiss="alert" aria-label="Close" wire:click='deleteSession'
-                    value="&times;">
-            </div>
-        </section>
-    @endif
+
     <div class="py-4">
         <x-text-input wire:model="search" class="block w-100" type="text" required
             placeholder="Haz match justo con el juego que buscas." value='' />
     </div>
-    @if ($search == ''|| $games=='[]')
-        <section class="text-center d-flex columna-flex-direction justify-content-center" >
+    @if ($search == '' || $games == '[]')
+        <section class="text-center d-flex columna-flex-direction justify-content-center">
 
-            <section class=" altura-minima-50 ancho-dashboard ">
-
+            <section class=" altura-minima-50 ancho-dashboard-2 ">
+                <div class="p-5 d-flex flex-column  altura-100 justify-content-center">
+                    Filtra para que aquí aparezca tu próximo juego fav.
+                </div>
             </section>
         </section>
     @else
@@ -44,7 +38,7 @@
                         </div>
                     </div>
                 </section>
-
+            </section>
         @endforeach
     @endif
 </div>

@@ -35,7 +35,16 @@
             </div>
         </section>
     @endif
-
+    @if (session('status') === 'unmatch')
+        <section class="d-flex justify-content-end">
+            <div class="alert alert-light alert-dismissible fade show mensajeCorrecto txt-dark-color px-2" role="alert">
+                <span class="px-4">Unmatches deshechos.</span>
+                <button type="button" class="boton-cerrar" data-dismiss="alert" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+        </section>
+    @endif
     <!--Sección generales-->
 
     <div class="d-flex columna-flex-direction-reverse" id="perfil">
@@ -192,4 +201,44 @@
     </div>
 
 
+    <div class="d-flex columna-flex-direction" id="cuenta">
+        <section class="w-50 columna-flex-direction-formulario">
+            <section class="text-center section">
+                <h6 class="neonText-sinflicker">DESHACER UNMATCHES</h6>
+            </section>
+            <div class="section row text-break justify-content-center ">
+                <!--separacion-->
+                <div class="col-lg-6 m-0">
+                    <div class="border-contenido row p-4">
+                        <div>
+                            <form method="post" action="{{ route('profile.unmatches') }}">
+                                @csrf
+                                @method('patch')
+
+                                <p>Haz reset de los unmatches que has hecho. Da una segunda oportunidad.</p>
+                                <div class="sectionHalf">
+                                    <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
+                                    <x-text-input id="password" name="password" type="password" class="w-100"
+                                        placeholder="{{ __('Password') }}" />
+                                    <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                                </div>
+
+                                <div class="sectionHalf">
+                                    <button class="neonButton w-100 mt-4" data-token="{{ csrf_token() }}">
+                                        {{ __('Deshacer') }}
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-50 bg-img-gaming-12 bg-img-gaming altura-minima-50">
+        </section>
+
+
+    </div>
 @endsection

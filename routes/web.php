@@ -64,6 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::put('password', [PasswordController::class, 'update'])->name('password.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::patch('/profile/unmatches', [ProfileController::class, 'unmatches'])->name('profile.unmatches');
     Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout');
 });
 

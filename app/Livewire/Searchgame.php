@@ -28,6 +28,10 @@ class Searchgame extends Component
         $this->dispatch('search');
         return view('livewire.searchgame', compact('games', 'search'));
     }
+    
+    public function deleteSession(){
+        session()->forget('status');
+    }
 
     public function match($id)
     {
@@ -41,4 +45,6 @@ class Searchgame extends Component
         $this->dispatch('matched');
         session()->put('status', 'Has hecho match.');
     }
+
+
 }

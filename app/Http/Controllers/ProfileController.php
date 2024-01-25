@@ -49,7 +49,18 @@ class ProfileController extends Controller
             session()->put('status', 'No puedes eliminar tu cuenta.');
         };
     }
-
+    public function unmatches(Request $request): RedirectResponse
+    {
+        $request->validateWithBag('userDeletion', [
+            'password' => ['required', 'current_password'],
+        ]);
+        try {
+            DB::table('user_game')->where('id_user', Auth::id())->where('match', 'NO')->delete();
+            return Redirect::route('profile.edit')->with('status', 'unmatch');
+        } catch (\Exception $e) {
+            session()->put('status', 'Error al deshacer los unmatches.');
+        };
+    }
     /**
      * Cerrar sesión
      */
