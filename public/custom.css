@@ -44,7 +44,7 @@ ul {
 }
 
 p {
-    margin: 1rem 0rem;
+    margin: 1rem 0rem; 
 }
 
 small {
@@ -53,7 +53,9 @@ small {
 footer{
     z-index: 1;position: relative;
     padding: 10px 20px;
-
+}
+.justificar{
+    text-align: justify;
 }
 /*
 |--------------------------------------------------------------------------

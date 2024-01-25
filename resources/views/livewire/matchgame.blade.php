@@ -16,7 +16,8 @@
                         {{ $genre->name }}
                     </button></small>
             @else
-                <small class="m-0"> <button class=" txt-dark-color m-1" wire:click="seleccionar({{ $genre->id }})">
+                <small class="m-0"> <button class=" txt-dark-color m-1"
+                        wire:click="seleccionar({{ $genre->id }})">
                         {{ $genre->name }}
                     </button></small>
             @endif
@@ -51,6 +52,15 @@
                                     {{ $g->name }}</span>
                             @endforeach
                         </div>
+                    </div>
+                </section>
+
+            </section>
+            <section class="text-center d-flex columna-flex-direction justify-content-center">
+
+                <section class="ancho-dashboard-2">
+                    <div class="pt-5 d-flex flex-column justify-content-center">
+                        <p class="justificar">{{ $game->description }}</p>
                     </div>
                 </section>
             </section>
