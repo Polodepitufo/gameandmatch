@@ -10,7 +10,7 @@
     @endif
     <div class="py-4 d-flex flex-wrap">
         @foreach ($genres as $genre)
-            @if (in_array($genre->id, $array))
+            @if (in_array($genre->id, $arrayGenre))
                 <small class="m-0"> <button class=" txt-dark-color m-1 neonButtonGenre"
                         wire:click="deseleccionar({{ $genre->id }})">
                         {{ $genre->name }}
@@ -23,7 +23,22 @@
             @endif
         @endforeach
     </div>
-    @if (!$array == '' && count($games) > 0)
+    <div class="pb-4 d-flex flex-wrap">
+        @foreach ($categories as $category)
+            @if (in_array($category->id, $arrayCategory))
+                <small class="m-0"> <button class=" txt-dark-color m-1 neonButtonGenre"
+                        wire:click="deseleccionar2({{ $category->id }})">
+                        {{ $category->name }}
+                    </button></small>
+            @else
+                <small class="m-0"> <button class=" txt-dark-color m-1"
+                        wire:click="seleccionar2({{ $category->id }})">
+                        {{ $category->name }}
+                    </button></small>
+            @endif
+        @endforeach
+    </div>
+    @if ((!$arrayGenre == '' || !$arrayCategory =='') && count($games) > 0)
         @foreach ($games as $game)
             <section class="text-center d-flex columna-flex-direction justify-content-center">
 

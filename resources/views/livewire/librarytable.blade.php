@@ -20,7 +20,9 @@
             @else
                 <section class="text-center d-flex columna-flex-direction">
                     @foreach ($gamesmatched as $index => $gamematch)
-                        <section class=" altura-minima-50 ancho-dashboard "
+                  
+
+                        <section class=" altura-minima-50  ancho-dashboard "
                             style=" background: linear-gradient(to bottom, rgba(17, 17, 17, 0.3), rgba(17, 17, 17, 1)), url(background/{{ $gamematch->background }}); background-repeat: no-repeat; background-size: cover; background-position: center;">
                             <div class="p-5 d-flex flex-column  altura-100">
                                 <div class="margin-left-auto flex-start  altura-100 flex-end">
@@ -61,6 +63,7 @@
                                 </div>
                             </div>
                         </section>
+                  
                     @endforeach
                 </section>
                 <section class="d-flex justify-content-center">{{ $gamesmatched->links(data: ['scrollTo' => false]) }}

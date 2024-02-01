@@ -55,6 +55,7 @@ Route::middleware('isAdminAndSuperAd')->group(function () {
 Route::middleware('auth')->group(function () {
 
 
+    Route::get('/library/{id}', [LibraryController::class, 'show'])->name('library.show');
     Route::get('/library', [LibraryController::class, 'list'])->name('library.list');
     Route::get('/match', [MatchController::class, 'list'])->name('match.list');
 

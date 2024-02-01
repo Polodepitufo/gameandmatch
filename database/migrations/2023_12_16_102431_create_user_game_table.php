@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_game');
             $table->string('valoration')->nullable();
+            $table->double('puntuation',8,2)->nullable();
             $table->enum('match',['SI','NO'])->default('NO');
             $table->enum('state',['MATCHED','EN PAUSA','EN JUEGO','UNMATCHED','COMPLETADO','ABANDONADO'])->default('UNMATCHED');
 

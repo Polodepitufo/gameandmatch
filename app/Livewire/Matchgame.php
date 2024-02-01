@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Category;
 use App\Models\Game;
 use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class Matchgame extends Component
 {
 
     public $arrayGeneros = array();
-
+    public $arrayCategories = array();
 
     #[On('seleccionar')]
     #[On('deseleccionar')]
@@ -22,6 +23,7 @@ class Matchgame extends Component
     public function render()
     {
         $genres =  Genre::orderBy('name', 'ASC')->get();
+        $categories=Category::orderBy('name', 'ASC')->get();
             $games = Game::whereNotIn('id', function ($query) {
                 $query->select('id_game')
                 ->from('user_game')
@@ -33,9 +35,21 @@ class Matchgame extends Component
                         $q->where('id_genre', $genre);
                     });
                 }
+            })->with(['categories'])->where(function ($query) {
+
+                foreach ($this->arrayCategories as $category) {
+                    $query->whereHas('categories', function ($q) use ($category) {
+                        $q->where('id_category', $category);
+                    });
+                }
             })->take(1)->get();
-        $array = $this->arrayGeneros;
-        return view('livewire.matchgame', compact('genres', 'array', 'games'));
+
+
+
+        $arrayGenre = $this->arrayGeneros;
+        $arrayCategory = $this->arrayCategories;
+
+        return view('livewire.matchgame', compact('genres','categories', 'arrayGenre','arrayCategory', 'games'));
     }
     public function deleteSession(){
         session()->forget('status');
@@ -77,6 +91,18 @@ class Matchgame extends Component
         $this->arrayGeneros=array_diff($this->arrayGeneros, [$genreSeleccionado]);
         $this->dispatch('deseleccionar');
     }
+    public function seleccionar2($id)
+    {
+        $categorySeleccionada = Category::where('id', $id)->value('id');
+        array_push($this->arrayCategories, $categorySeleccionada);
+        $this->dispatch('seleccionar');
+    }
 
+    public function deseleccionar2($id)
+    {
+        $categorySeleccionada = Category::where('id', $id)->value('id');
+        $this->arrayCategories=array_diff($this->arrayCategories, [$categorySeleccionada]);
+        $this->dispatch('deseleccionar');
+    }
 
 }

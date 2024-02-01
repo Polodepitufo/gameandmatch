@@ -66,8 +66,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 misma-altura my-2">
                 <div class="border-contenido p-4 d-flex flex-column justify-content-between">
-                    <p> Me encanta tener un registro de los juegos a los que voy jugando. Muy útil. Recomiendo empezar a
-                        usarla.
+                    <p> Terminé The Binding of Isaac y estaba buscando más roguelikes. Las categorías están de lujo.
                     </p>
                     <p class="">Ladysnowball</p>
                 </div>
@@ -83,19 +82,17 @@
 
             <div class="col-lg-3 col-md-6 misma-altura my-2">
                 <div class="border-contenido p-4 d-flex flex-column justify-content-between">
-                    <p> Me encanta tener un registro de los juegos a los que voy jugando. Muy útil. Recomiendo empezar a
-                        usarla.
+                    <p>Si no sabes qué jugar, Game and match es muy útil: usando los filtros he encontrado juegos de narrativa guapísimos.
                     </p>
-                    <p class="">_LADYSNOWBALL</p>
+                    <p class="">Icywind</p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 misma-altura my-2">
                 <div class="border-contenido p-4 d-flex flex-column justify-content-between">
-                    <p> Me encanta tener un registro de los juegos a los que voy jugando. Muy útil. Recomiendo empezar a
-                        usarla.
+                    <p> Necesitaba un registro de todos los juegos que compro y tengo a medias, ¡Gameandmatch es perfecto para ello!
                     </p>
-                    <p class="">_LADYSNOWBALL</p>
+                    <p class="">Iris</p>
                 </div>
             </div>
         </div>
