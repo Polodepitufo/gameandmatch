@@ -14,7 +14,7 @@ class Libraryvalorationuser extends Component
     protected $paginationTheme = 'bootstrap';
     public $search = '';
     public User $user;
-    #[On('search')]
+    #[On('searchuser')]
     public function render()
     {
         if ($this->search != '') {
@@ -27,7 +27,7 @@ class Libraryvalorationuser extends Component
         ->select('games.*','user_game.*')->groupBy('games.id')->orderBy('puntuation','desc')
         ->simplePaginate(6, ['*'], 'puntuados');
 
-        $this->dispatch('search');
+        $this->dispatch('searchuser');
         return view('livewire.libraryvalorationuser', compact('gamesPuntuar'));
     }
     public function deleteSession()
