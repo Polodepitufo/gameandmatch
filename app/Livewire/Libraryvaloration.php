@@ -27,6 +27,7 @@ class Libraryvaloration extends Component
         ->join('games', 'user_game.id_game', '=', 'games.id')
         ->where('user_game.id_user', Auth::id())
         ->select('games.*','user_game.*')->groupBy('games.id')->orderBy('puntuation','desc')
+        ->orderBy('games.id', 'asc')
         ->simplePaginate(6, ['*'], 'puntuados');
 
         $this->dispatch('search');
