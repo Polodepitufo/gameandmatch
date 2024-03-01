@@ -59,9 +59,9 @@
                             MATCH
                         </li>
                     </a>
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('search.list') }}">
                         <li class="p-4 mb-0">
-                            BUSCAR PERFIL
+                            BUSCAR USUARIO
                         </li>
                     </a>
                 @endif

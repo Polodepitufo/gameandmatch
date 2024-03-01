@@ -24,7 +24,7 @@
 
         <div class="sectionHalf">
 
-            <x-input-label for="valoration" :value="__('* valoration')" class="w-100 mb-2" />
+            <x-input-label for="valoration" :value="__('Valoración')" class="w-100 mb-2" />
             <textarea wire:model="valoration" class="w-100" required></textarea>
             @error('valoration')
                 <x-input-error :messages="$errors->get('valoration')" class="mt-2 w-100" />

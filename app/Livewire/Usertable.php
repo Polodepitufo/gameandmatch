@@ -15,9 +15,6 @@ class Usertable extends Component
     protected $paginationTheme = 'bootstrap';
     public $search = '';
 
-
-
-
     #[On('search')]
     public function render()
     {

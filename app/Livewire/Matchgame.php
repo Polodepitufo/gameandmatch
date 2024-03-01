@@ -91,6 +91,7 @@ class Matchgame extends Component
         $this->arrayGeneros=array_diff($this->arrayGeneros, [$genreSeleccionado]);
         $this->dispatch('deseleccionar');
     }
+    
     public function seleccionar2($id)
     {
         $categorySeleccionada = Category::where('id', $id)->value('id');

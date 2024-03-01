@@ -10,7 +10,6 @@ use Livewire\Component;
 class Librarystats extends Component
 {
 
-
     #[On('jugar')]
     #[On('pausar')]
     #[On('abandonar')]

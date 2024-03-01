@@ -10,6 +10,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\MatchController;
+use App\Http\Controllers\SearchController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Tests\Feature\Auth\PasswordUpdateTest;
@@ -57,8 +58,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/library/{id}', [LibraryController::class, 'show'])->name('library.show');
     Route::get('/library', [LibraryController::class, 'list'])->name('library.list');
+
     Route::get('/match', [MatchController::class, 'list'])->name('match.list');
 
+    Route::get('/search', [SearchController::class, 'list'])->name('search.list');
+    Route::get('/search/{id}', [SearchController::class, 'show'])->name('search.show');
+    
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
