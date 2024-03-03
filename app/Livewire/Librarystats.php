@@ -9,11 +9,14 @@ use Livewire\Component;
 
 class Librarystats extends Component
 {
-
+    //Se manejan los eventos
     #[On('jugar')]
     #[On('pausar')]
     #[On('abandonar')]
     #[On('completar')]
+    /**
+     * Carga la vista correspondiente
+     */
     public function render()
     {
         $unmatches = DB::table('user_game')->where('id_user', Auth::id())->where('match', 'NO')->count();

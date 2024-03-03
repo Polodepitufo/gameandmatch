@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-
-    public function edit(Request $request): View
+    /**
+     * Muestra la información relacionada con el $id que entra como parametro
+     * Carga la vista correspondiente
+     */
+    public function show(Request $request): View
     {
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
-
+    /**
+     * Actualiza los datos de perfil del usuario
+     */
     public function update(ProfileUpdateRequest $request)
     {
         $request->user()->fill($request->validated());
@@ -32,6 +37,9 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+    /**
+     * Elimina el perfil del usuario
+     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
@@ -49,6 +57,10 @@ class ProfileController extends Controller
             session()->put('status', 'No puedes eliminar tu cuenta.');
         };
     }
+
+    /**
+     * Reestablece los unmatches del usuario
+     */
     public function unmatches(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
@@ -61,8 +73,9 @@ class ProfileController extends Controller
             session()->put('status', 'Error al deshacer los unmatches.');
         };
     }
+    
     /**
-     * Cerrar sesión
+     * Cierra la sesión
      */
     public function logout(): RedirectResponse
     {

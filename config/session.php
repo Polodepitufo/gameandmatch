@@ -195,7 +195,7 @@ return [
     | Supported: "lax", "strict", "none", null
     |
     */
-
+    'csrf_token' => true,
     'same_site' => 'lax',
 
 ];

@@ -3,14 +3,15 @@
 
 @section('content')
 
-@if (session('status'))
-<section class="d-flex justify-content-end">
-    <div class="alert alert-light alert-dismissible fade show mensajeCorrecto txt-dark-color px-2" role="alert">
-        <span class="px-4">{{ session('status') }}</span>
-        <input type="button" class="boton-cerrar" data-dismiss="alert" aria-label="Close" wire:click='deleteSession' value="&times;">
-    </div>
-</section>
-@endif
+    @if (session('status'))
+        <section class="d-flex justify-content-end">
+            <div class="alert alert-light alert-dismissible fade show mensajeCorrecto txt-dark-color px-2" role="alert">
+                <span class="px-4">{{ session('status') }}</span>
+                <input type="button" class="boton-cerrar" data-dismiss="alert" aria-label="Close" wire:click='deleteSession'
+                    value="&times;">
+            </div>
+        </section>
+    @endif
 
 
 
@@ -29,7 +30,7 @@
                     <div class="border-contenido row p-4">
                         @livewire('gameedit', ['game' => $game, key($game->id)])
                     </div>
-                    <div class="row p-4"> 
+                    <div class="row p-4">
                         <a class=" neonTextHover"href="{{ url()->previous() }}#gameList">↩ VOLVER</a>
                     </div>
                 </div>

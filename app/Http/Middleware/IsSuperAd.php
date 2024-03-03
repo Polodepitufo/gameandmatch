@@ -9,15 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 class IsSuperAd
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * Maneja una solicitud entrante
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->check() && auth()->user()->rol =='SUPERAD'){
+        //Se verifica si el usuario está autenticado y tiene el rol correspondiente
+        if (auth()->check() && auth()->user()->rol == 'SUPERAD') {
+            // Si es un usuario válido, se permite que la solicitud entre
             return $next($request);
-         }
-         return redirect('/');
+        }
+        // Si no es un usuario válido, redirigir a la página principal
+        return redirect('/');
     }
 }

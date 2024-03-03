@@ -7,24 +7,23 @@
         </section>
 
         <section class="w-50 columna-flex-direction-formulario">
-            <!--Sección cabecera-->
+
             <section class="text-center section">
                 <h6 class="neonText-sinflicker">_GAME&MATCH_</h6>
                 <h4>PANEL DE ACCESO</h4>
                 <hr>
             </section>
 
-            <!-- Session Status -->
-         
+
             <div class="section row text-break justify-content-center ">
-                <!--separacion-->
+
                 <div class="col-lg-6 m-0">
                     <div class="border-contenido row p-4">
                         <div>
                             <form method="POST" action="{{ route('login') }}" novalidate>
                                 @csrf
 
-                                <!-- Email Address -->
+
                                 <div class="sectionHalf">
 
                                     <x-input-label for="email" :value="__('Email')" class="w-100 mb-2" />
@@ -35,7 +34,6 @@
 
                                 </div>
 
-                                <!-- Password -->
                                 <div class="sectionHalf">
                                     <x-input-label for="password" :value="__('Contraseña')" class="w-100 mb-2" />
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('app_id')->nullable();
             $table->string('name');
             $table->enum('platform',['STEAM','SWITCH', 'PLAY 4','XBOX','MOVIL'])->default('STEAM');
-            $table->string('description'); //
+            $table->string('description'); 
             $table->string('background');
             
             $table->timestamp('updated_at')->nullable();

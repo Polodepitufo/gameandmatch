@@ -11,9 +11,9 @@ use App\Models\User;
 class DashboardController extends Controller
 {
     /**
-     * En base al rol, determinamos un dashboard u otro
+     * Carga la vista correspondiente en base al rol 
      */
-    public function dashboard()
+    public function list()
     {
         session()->forget('status');
         $users = User::all()->count();

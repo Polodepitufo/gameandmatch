@@ -14,6 +14,16 @@ use App\Http\Controllers\SearchController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Tests\Feature\Auth\PasswordUpdateTest;
+/*
+|--------------------------------------------------------------------------
+| Anotaciones generales del proyecto:
+| - Se dejan por defecto los comentarios en inglés en las funciones que proporciona laravel.
+| - En cada controlador borramos la sesión para que no persista el mensaje emergente.
+| - En las request se añade el nick
+| - En Http/Kernel se añaden los alias de los middlewares
+| - Se deja principalmente comentado: controladores y controladores de livewire. Modelos. Middlewares credaos. 
+|--------------------------------------------------------------------------
+*/
 
 /*
 |--------------------------------------------------------------------------
@@ -64,9 +74,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/search', [SearchController::class, 'list'])->name('search.list');
     Route::get('/search/{id}', [SearchController::class, 'show'])->name('search.show');
     
-    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'list'])->name('dashboard');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::put('password', [PasswordController::class, 'update'])->name('password.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

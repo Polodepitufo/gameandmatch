@@ -13,8 +13,8 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-     /**
-     * Display the user's profile form.
+    /**
+     * Carga la vista correspondiente
      */
     public function list(): View
     {

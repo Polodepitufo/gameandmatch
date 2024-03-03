@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class MatchController extends Controller
 {
+    /**
+     * Carga la vista correspondiente
+     */
     public function list(): View
     {
         session()->forget('status');

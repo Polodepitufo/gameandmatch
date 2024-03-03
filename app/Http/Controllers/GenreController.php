@@ -8,16 +8,29 @@ use Illuminate\Support\Facades\Redirect;
 
 class GenreController extends Controller
 {
+    /**
+     * Carga la vista correspondiente
+     */
     public function list()
     {
         session()->forget('status');
         return view('genre.list');
     }
+
+
+    /**
+     * Muestra la información relacionada con el $id que entra como parametro
+     * Carga la vista correspondiente
+     * En caso de que el $id no exista, te redirige a la página general de géneros
+     */
     public function show($id)
     {
-        session()->forget('status');
-        $genre = Genre::findOrFail($id);
-        return view('genre.show', compact('genre'));
+        try {
+            $genre = Genre::findOrFail($id);
+            session()->forget('status');
+            return view('genre.show', compact('genre'));
+        } catch (\Exception $e) {
+            return Redirect::to('category');
+        };
     }
-
 }

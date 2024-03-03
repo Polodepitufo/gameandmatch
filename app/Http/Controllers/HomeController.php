@@ -11,8 +11,11 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function __invoke(){
+    /**
+     * Invoca el controlador para mostrar la vista correspondiente
+     */
+    public function __invoke()
+    {
         return view('home');
     }
-
 }
