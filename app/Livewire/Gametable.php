@@ -19,7 +19,6 @@ class Gametable extends Component
     //Se manejan los eventos
     #[On('editGame')]
     #[On('search')]
-
     /**
      * Carga la vista correspondiente
      */
@@ -36,6 +35,7 @@ class Gametable extends Component
         $this->dispatch('search');
         return view('livewire.gametable', compact('games'));
     }
+    
     /**
      * Elimina el elemento en base al id que entra. También géneros y categorias asociadas
      * En caso de que el elemento esté relacionado, se envía un mensaje informativo

@@ -31,7 +31,7 @@ class GameController extends Controller
             session()->forget('status');
             return view('game.show', compact('game'));
         } catch (\Exception $e) {
-            return Redirect::to('category');
+            return Redirect::to('game');
         };
     }
 }

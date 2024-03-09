@@ -101,4 +101,6 @@ class Gameedit extends Component
     {
         session()->forget('status');
     }
+
+
 }

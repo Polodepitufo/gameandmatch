@@ -30,7 +30,7 @@ class GenreController extends Controller
             session()->forget('status');
             return view('genre.show', compact('genre'));
         } catch (\Exception $e) {
-            return Redirect::to('category');
+            return Redirect::to('genre');
         };
     }
 }

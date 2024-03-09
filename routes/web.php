@@ -21,7 +21,7 @@ use Tests\Feature\Auth\PasswordUpdateTest;
 | - En cada controlador borramos la sesión para que no persista el mensaje emergente.
 | - En las request se añade el nick
 | - En Http/Kernel se añaden los alias de los middlewares
-| - Se deja principalmente comentado: controladores y controladores de livewire. Modelos. Middlewares credaos. 
+| - Se deja principalmente comentado: controladores y controladores de livewire. Modelos. Middlewares creados. Test unitarios. 
 |--------------------------------------------------------------------------
 */
 
